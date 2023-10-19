@@ -1,0 +1,206 @@
+CLASS->
+    Named group of properties and function
+    Logical Construct
+    Template for an object
+    Helps in making Own data type
+    when an object of a class is created it's been instantiated
+
+
+
+OBJECT->
+    Instance of an class 
+    Physical existence of an class(Occupies space in Heap memory)
+    created at run time
+
+
+
+CONSTRUCTOR->
+    A special function with no return type
+    runs when object is created 
+    helps in assigning values
+
+
+
+finalize() METHOD->
+    Automatically called when java garbage collector destroys an object
+    any message/action can be done under this method to know whether method is called
+
+
+
+super() METHOD->
+    *used to initialize variables of parent class 
+    *Automatically calls the parent CONSTRUCTOR in child class according to parameters 
+    *used to access parent class parameter that may have same name as of child class
+    *eg. 
+	    super(a,b,c);
+	    super.a;
+
+
+
+static KEYWORD->
+    *static variables aren't dependent on objects.
+    *something that is common between all, and not related to single object.
+    *Anything non static (variable,function) is related to object.
+    *this keyword is not used in static variable
+    *resolved during compile time
+    *Static method's can't be overriden
+    *for eg. population is common for all human beings
+
+
+
+
+new KEYWORD->
+    *Dynamically allocates memory at run time(when program is running) and 
+    *returns a reference variable to it.
+
+
+
+this KEYWORD->
+    *refers to the current object
+
+
+
+final KEYWORD->
+    *doesn't allow modification of value in primitive data type
+    *modification is allowed in non primitive(objects), but reassisgnment isn't allowed.
+    *A final class will have all it's method as final too
+    *Prevents inheritance
+    *Provides EARLY BINDING
+    *for eg. 
+        1)
+        final int a=4;
+        a=3         //gives error
+
+        2)
+        final Student him=new Student();
+        him.name="her";
+        him=anotherObject  // gives error
+
+
+
+
+
+***************************METHOD OVERRIDING & BINDING***********
+
+
+	*Method to be called is dependent on
+	  Object type
+									
+	*Static method's can't be overriden
+	*final methods can't be overriden
+		, and it is determined at compile time
+		hence, called EARLY BINDING
+	* For eg.
+		name() is in both Parent and child
+		Parent is the Object reference type 
+		and Child is the object type
+		
+		Parent x=new Child();
+		x.name();
+		
+		name method from Child class is called
+		not the the parent
+		But name() should be present in parent too
+		, for access. 
+		which name() method to call is determined 
+		using DYNAMIC METHOD DISPATCH at run time,
+		and is dependent on type of object.
+		Also known as LATE BINDING
+		Known as UPCASTING.
+
+
+
+	***********************PROPERTIES IN OOP*************
+
+1) INHERITANCE->
+
+	TYPES OF INHERITANCE:
+
+	1) SINGLE:
+				Class A
+					|
+				Class B
+				
+				
+	2) MULTILEVEL:
+				Class A
+					|
+				Class B
+					|
+				Class C
+				
+	3) MULTIPLE: 
+		Not supported in java , due to ambiguity of data
+		For eg. n=10(in class a) and n=5(in class b) and if we access n in  class c there would be ambiguity/
+		
+				Class A         Class B
+					|				|
+					----------------
+						|
+						Class C
+						
+						
+	4) HIERARICHAL:
+						Class A        
+							|			
+						-----------------
+						|				|
+						Class C			 Class B
+						
+						
+						
+	5) HYBRID:
+		Not Supported in java, same reason as in Multiple inheritance
+		It is combination of single and multiple inheritance
+					
+
+
+2)  POLYMORPHISM->
+	Polymorphism means "many forms", 
+	and it occurs when we have many classes that are related to each other by inheritance
+
+									POLYMORPHISM
+										|
+			-------------------------------------------------------------------------
+			|																		|
+			COMPILE TIME/ STATIC												RUN TIME/ DYNAMIC
+			|																		|
+			*Uses method overloading												*Uses method overriding
+			*For eg. 																*Classes having method with same name
+				Many Constructors with												*Method to be called is dependent on
+				different arguments &	return type 								 Object type																
+																					*Static method's can't be overriden
+																					*final methods can't be overriden
+																						, and it is determined at compile time
+																						hence, called EARLY BINDING
+																					* For eg.
+																						name() is in both Parent and child
+																						Parent is the Object reference type 
+																						and Child is the object type
+																						
+																						Parent x=new Child();
+																						x.name();
+																						
+																						name method from Child class is called
+																						not the the parent
+																						But name() should be present in parent too
+																						, for access. 
+																						which name() method to call is determined 
+																						using DYNAMIC METHOD DISPATCH at run time,
+																						and is dependent on type of object.
+																						Also known as LATE BINDING
+																						Known as UPCASTING.
+					
+					
+3)  ENCAPSULATION->
+		*wrapping up data members and methods in a class
+		*Hides code and provides protection
+		*solves implementation level issues
+		
+		
+		
+3)  ABSTRACTION->
+		*Hiding unnecessary details and providing vital information
+		*Solves design level issues
+		* For eg. internal implementation of abstract classes. For eg. Array List
+    
